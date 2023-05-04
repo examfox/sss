@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML file retrieve using Ajax</title>
+</head>
+<body>
+    <h2>View the contents of an XML file by clicking here...</h2>
+    <button onclick="fun()">Get Details</button>
+</body>
+<script>
+    function fun(){
+        let xhttp=new XMLHttpRequest();
+        xhttp.open('GET','http_xml.xml',true);
+        xhttp.send();
+        xhttp.onload=()=>{
+            var xmldoc=xhttp.responseXML;
+            var x=xmldoc.getElementsByTagName('title');
+            var y=xmldoc.getElementsByTagName('author');
+            var z=xmldoc.getElementsByTagName('year');
+            var u=xmldoc.getElementsByTagName('price');
+
+            var i=0;
+            var len=x.length;
+            document.write("<center><h2>Books Details</h2></center>");
+            document.write("<table align=center border=1 >");
+            document.write("<tr>");
+            document.write("<th>Book Name</th> <th>Author</th> <th>Year</th> <th>Price</th>");
+            document.write("</tr>");
+            for(i;i<len;i++){
+                document.write("<tr>");
+                document.write("<td>"+x[i].childNodes[0].nodeValue+"</td>");
+                document.write("<td>"+y[i].childNodes[0].nodeValue+"</td>");
+                document.write("<td>"+z[i].childNodes[0].nodeValue+"</td>");
+                document.write("<td>"+u[i].childNodes[0].nodeValue+"</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        // xhttp.onreadystatechange=function(){
+        //     if(xhttp.readyState==4 && xhttp.status==200){
+                
+        //     }
+        // };
+    }
+</script>
+</html>

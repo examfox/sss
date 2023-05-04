@@ -1,0 +1,32 @@
+<bookstore>
+    <book category="Programming1">
+        <title>C++ Programming</title>
+        <author>Ravi Teja</author>
+        <year>2002</year>
+        <price>$125</price>
+    </book>
+    <book category="Programming2">
+        <title>Data Structures</title>
+        <author>ManiKanta</author>
+        <year>2002</year>
+        <price>$225</price>
+    </book>
+    <book category="Programming3">
+        <title>Java</title>
+        <author>James Gosling</author>
+        <year>1990</year>
+        <price>$23</price>
+    </book>
+    <book category="Databases">
+        <title>DBMS</title>
+        <author>Maruthi</author>
+        <year>2083</year>
+        <price>$36</price>
+    </book>
+    <book category="Programming4">
+        <title>Python</title>
+        <author>Rakesh</author>
+        <year>2002</year>
+        <price>$300</price>
+    </book>
+</bookstore>

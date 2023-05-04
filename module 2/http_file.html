@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta xhttp-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax fetching</title>
+</head>
+<body>
+    <h2>Welcome to Ajax....</h2>
+    <button onclick="fun()">Review content</button><br>
+    <p id="info"></p>
+</body>
+<script>
+    function fun(){
+        const xhttp=new XMLHttpRequest();
+        xhttp.open('GET','http_file.txt',true);
+        xhttp.send();   //sending request to server
+        xhttp.onload=function(){
+            document.getElementById("info").innerHTML=xhttp.responseText;
+        }
+        // <!--xhttp.onreadystatechange=function(){
+        //     if(xhttp.readyState==4 && xhttp.status==200){
+        //         document.getElementById("info").innerHTML=xhttp.responseText;
+        //     }
+        // };!-->
+    }
+</script>
+</html>
